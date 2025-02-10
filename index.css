@@ -1,7 +1,5 @@
 @charset "UTF-8";
 
-/* @font-face { font-family: Lubrax; src: url(lubrax-display-regular.woff2) format('woff2'); } */
-
 .header {
     display: flex;
     align-items: center;
