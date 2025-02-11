@@ -27,24 +27,40 @@
 .toolbar {
     width: 100%;
     height: 64px;
-    padding: 12px 8px;
+    padding: 14px 8px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    flex-direction: column;
-    flex-wrap: nowrap;
+    align-content: space-between;
+    justify-content: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
     background-color: var(--one-soft);
 }
 .toolbar h1,
-.toolbar h2 {
+.toolbar h2,
+.toolbar h3 {
     width: 100%;
-    text-align: center;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
 }
-.toolbar h1 { font-weight: bold; }
-.toolbar h2 { font-style: italic; }
+    .toolbar h1 {
+        width: 88px;
+        padding-right: 8px;
+        font-size: var(--fs-xs);
+        font-style: italic;
+        text-align: right;
+        color: var(--light);
+    }
+    .toolbar h2 {
+        width: calc(100% - 88px);
+        font-weight: bold;
+        color: var(--one-high);
+    }
+    .toolbar h3 {
+        width: calc(100% - 88px);
+        color: var(--one-high);
+    }
 
 
 .content {
