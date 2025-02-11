@@ -5,6 +5,7 @@ var app = new Object();
 app.version = "1.0.1";
 
 app.launcher = function() {
+    checkbox.setup("Privacy");
     console.log("Ok")
 }
 

@@ -9,18 +9,16 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="shortcut icon" href="https://cdn.lubraxmaissystem.com/plugins/lubrax/favicon.ico" type="image/ico">
 		<link rel="stylesheet" type="text/css" href="https://cdn.lubraxmaissystem.com/plugins/lubrax/root.css">
-		<!-- <link rel="stylesheet" type="text/css" href="temp/root.css"> -->
 		<link rel="stylesheet" type="text/css" href="https://cdn.lubraxmaissystem.com/plugins/loader/loader.css">
-		<link rel="stylesheet" type="text/css" href="https://cdn.lubraxmaissystem.com/plugins/warnings/warnings.css">
-		<link rel="stylesheet" type="text/css" href="https://cdn.lubraxmaissystem.com/plugins/inputs/inputs.css">
-		<link rel="stylesheet" type="text/css" href="https://cdn.lubraxmaissystem.com/plugins/buttons/buttons.css">
+		<link rel="stylesheet" type="text/css" href="https://cdn.lubraxmaissystem.com/plugins/warnings/warnings.css">	
+		<link rel="stylesheet" type="text/css" href="https://cdn.lubraxmaissystem.com/plugins/lubrax/lubrax.css">
         <link rel="stylesheet" type="text/css" href="index.css">
 		<link rel="stylesheet" type="text/css" href="https://cdn.lubraxmaissystem.com/plugins/lubrax/layers.css">
 		<script type="text/javascript" src="https://cdn.lubraxmaissystem.com/plugins/loader/loader.js"></script>
 		<script type="text/javascript" src="https://cdn.lubraxmaissystem.com/plugins/warnings/warnings.js"></script>
-        <script type="text/javascript" src="https://cdn.lubraxmaissystem.com/plugins/inputs/inputs.js"></script>
 		<script type="text/javascript" src="https://cdn.lubraxmaissystem.com/plugins/masks/mask.js"></script>
 		<script type="text/javascript" src="https://cdn.lubraxmaissystem.com/scripts/converter.js"></script>
+		<script type="text/javascript" src="https://cdn.lubraxmaissystem.com/plugins/lubrax/lubrax.js"></script>
 		<script type="text/javascript" src="index.js"></script>
     </head>
 	<body id="Body" class="body" onload="app.launcher();">
@@ -28,7 +26,70 @@
         <div id="Header" class="header void"></div>
 
         <div id="Wrapper" class="wrapper">
-			Aplicação em construção
+			
+			<div id="Toolbar" class="toolbar">
+				<h1>Nome do atendente</h1>
+				<h2>Nome do ponto de venda</h2>
+			</div>
+
+			<div id="Content" class="content">
+
+				<form id="Find" class="find">
+
+					<legend>Pesquisar condutor</legend>
+
+					<fieldset class="finder">
+						<label for="Search">DDD + Número do Telefone</label>
+						<input type="text" id="Search" name="Search" autocomplete="on" placeholder="Informe seu número do telefone com DDD" value="">
+						<button type="button" id="SearchPhone" class="md text filled">Enviar</button>
+					</fieldset>
+
+				</form>
+
+				<form id="Lead" class="lead">
+
+					<legend>Dados do condutor</legend>
+		
+					<fieldset>
+						<label for="Name">Nome do condutor</label>
+						<input type="text" id="Name" name="Name" autocomplete="on" placeholder="Informe seu nome completo">
+					</fieldset>
+	
+					<fieldset class="md">
+						<label for="Phone">DDD + Número do Telefone</label>
+						<input type="text" id="Phone" name="Phone" autocomplete="on" placeholder="Informe seu número do telefone com DDD">
+					</fieldset>
+	
+					<fieldset class="md">
+						<label for="CPF">Número do CPF&nbsp;&nbsp;&nbsp;<i>(Não obrigatório)</i></label>
+						<input type="text" id="CPF" name="CPF" autocomplete="on" placeholder="Informe seu número do CPF">
+					</fieldset>
+	
+					<fieldset>
+						<label for="Email">Endereço de e-mail&nbsp;&nbsp;&nbsp;<i>(Não obrigatório)</i></label>
+						<input type="text" id="Email" name="Email" autocomplete="on" placeholder="Informe seu endereço de e-mail">
+					</fieldset>
+	
+					<legend>
+						<a target="_blank" class="privacy" href="https://cdn.lubraxmaissystem.com/docs/privacy.html">Termos de privacidade Vibra</a>
+					</legend>
+
+					<legend>
+						<a target="_blank" class="privacy" href="https://www.vibraenergia.com.br/portal-da-privacidade">Portal de privacidade Vibra</a>
+					</legend>
+	
+					<fieldset id="Privacy">
+						<button type="button" id="PrivacyAdvice" class="checkbox stack checked">Aceito ser cadastrado no Lubrax+ System</button>
+						<button type="button" id="PrivacySMS" class="checkbox stack checked">Aceito receber SMS Promocional da VIBRA</button>
+						<button type="button" id="PrivacyWhatsapp" class="checkbox stack checked">Aceito receber comunicação da VIBRA por WhatsApp</button>
+						<button type="button" id="PrivacyEmail" class="checkbox stack checked">Aceito receber E-mail Promocional da VIBRA</button>
+					</fieldset>
+
+				</form>
+
+			</div>
+
+
 		</div>
 
         <div id="Footer" class="footer">

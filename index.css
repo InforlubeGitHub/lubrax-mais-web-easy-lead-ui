@@ -24,8 +24,64 @@
 }
 .footer button:hover { color: var(--one-slim); border: 1px solid var(--one-slim); }
 
-.wrapper {
+.toolbar {
+    width: 100%;
+    height: 64px;
+    padding: 12px 8px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    background-color: var(--one-soft);
+}
+.toolbar h1,
+.toolbar h2 {
+    width: 100%;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.toolbar h1 { font-weight: bold; }
+.toolbar h2 { font-style: italic; }
+
+
+.content {
+    width: 100%;
+    height: calc(100% - 64px);
+    padding: 32px;
+    display: flex;
+    align-items: flex-start;
+    align-content: flex-start;
+    justify-content: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+    .content .find { width: 100%; }
+    .find .finder {
+        display: flex;
+        align-items: center;
+        align-content: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .finder label { width: 100%; }
+    .finder input { width: calc(100% - 88px); }
+    .finder button { width: 80px; margin-top: 4px; }
+
+    .content .lead {
+        display: flex;
+        align-items: center;
+        align-content: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+@media only screen and (max-width: 512px) {
+    .content { padding: 8px !important; }
+    .finder input { width: calc(100% - 72px) !important; }
+    .finder button { width: 64px !important; }
 }
