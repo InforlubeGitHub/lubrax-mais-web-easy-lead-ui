@@ -28,48 +28,48 @@
         <div id="Wrapper" class="wrapper">
 			
 			<div id="Toolbar" class="toolbar">
-				<h1>Atendente:</h1>
-				<h2 id="User">Nome do atendente</h2>
-				<h1>Ponto de venda:</h1>
-				<h3 id="Store">Nome do ponto de venda</h3>
+				<i class="user"></i>
+				<h1 id="User">Nome do atendente</h1>
+				<i class="store"></i>
+				<h2 id="Store">Nome do ponto de venda</h2>
 			</div>
 
 			<div id="Content" class="content">
 
 				<form id="Find" class="find">
 
-					<legend>Pesquisar condutor</legend>
+					<legend>Cadastro fácil Lubrax+</legend>
 
 					<fieldset class="finder">
-						<label for="Search">DDD + Número do Telefone</label>
-						<input type="text" id="SearchPhone" name="Search" autocomplete="on" placeholder="Informe seu número do telefone com DDD" value="">
+						<label for="Search">Informe seu número do telefone com DDD</label>
+						<input type="text" id="ISearch" name="Search" autocomplete="on" placeholder="Informe seu número do telefone" value="">
 						<button type="button" id="Search" class="md text filled">Enviar</button>
 					</fieldset>
 
 				</form>
 
-				<form id="Lead" class="lead">
+				<form id="Lead" class="lead hidden">
 
-					<legend>Dados do condutor</legend>
+					<legend>Cadastro fácil Lubrax+</legend>
 		
 					<fieldset>
-						<label for="Name">Nome do condutor</label>
+						<label for="Name">Nome completo</label>
 						<input type="text" id="Name" name="Name" autocomplete="on" placeholder="Informe seu nome completo">
 					</fieldset>
 	
-					<fieldset class="md">
-						<label for="Phone">DDD + Número do Telefone</label>
-						<input type="text" id="Phone" name="Phone" autocomplete="on" placeholder="Informe seu número do telefone com DDD">
+					<fieldset>
+						<label for="Phone">Número do telefone com DDD</label>
+						<input type="text" id="Phone" name="Phone" autocomplete="on" placeholder="Informe seu número do telefone">
 					</fieldset>
-	
-					<fieldset class="md">
+					
+					<fieldset>
+						<label for="Email">Endereço de e-mail</label>
+						<input type="text" id="Email" name="Email" autocomplete="on" placeholder="Informe seu endereço de e-mail">
+					</fieldset>
+
+					<fieldset>
 						<label for="CPF">Número do CPF&nbsp;&nbsp;&nbsp;<i>(Não obrigatório)</i></label>
 						<input type="text" id="CPF" name="CPF" autocomplete="on" placeholder="Informe seu número do CPF">
-					</fieldset>
-	
-					<fieldset>
-						<label for="Email">Endereço de e-mail&nbsp;&nbsp;&nbsp;<i>(Não obrigatório)</i></label>
-						<input type="text" id="Email" name="Email" autocomplete="on" placeholder="Informe seu endereço de e-mail">
 					</fieldset>
 	
 					<legend>
@@ -81,29 +81,36 @@
 					</legend>
 	
 					<fieldset id="Privacy">
-						<button type="button" id="PrivacyAdvice" class="checkbox stack checked">Aceito ser cadastrado no Lubrax+ System</button>
-						<button type="button" id="PrivacySMS" class="checkbox stack checked">Aceito receber SMS Promocional da VIBRA</button>
-						<button type="button" id="PrivacyWhatsapp" class="checkbox stack checked">Aceito receber comunicação da VIBRA por WhatsApp</button>
-						<button type="button" id="PrivacyEmail" class="checkbox stack checked">Aceito receber E-mail Promocional da VIBRA</button>
+						<button type="button" id="PrivacyAdvice" class="checkbox stack">Aceito ser cadastrado no Lubrax+ System</button>
+						<button type="button" id="PrivacySMS" class="checkbox stack">Aceito receber SMS Promocional da VIBRA</button>
+						<button type="button" id="PrivacyWhatsapp" class="checkbox stack">Aceito receber comunicação da VIBRA por WhatsApp</button>
+						<button type="button" id="PrivacyEmail" class="checkbox stack">Aceito receber E-mail Promocional da VIBRA</button>
 					</fieldset>
 
 				</form>
 
+				<form id="Done" class="done hidden">
+					<i></i>
+					<h1>Obrigado</h1>
+					<h2>Cadastro recebido com sucesso!</h2>
+				</form>
+
 			</div>
 
+			<div id="Failure" class="failure hidden">Sistema indisponível no momento, por favor, tente mais tarde.</div>
 
 		</div>
 
         <div id="Footer" class="footer">
-			<button type="button" id="Insert" class="">Cadastrar</button>
-			<button type="button" id="Update" class="hidden">Atualizar</button>
+			<div id="Message" class="message">Cadastro Fácil Lubrax+</div>
+			<button type="button" id="Insert" class="hidden">Enviar</button>
 		</div>
 
         <div id="Loader" class="loader"></div>
 
 		<div id="Snackbar" class="snackbar"></div>
 
-		<div id="Error" class="error">Error</div>
+		<div id="Error" class="error">Este dispositivo não possui resolução sufificente para executar a aplicação. Para dispositivo móveis, tente utiliza-lo em modo Landscape, se o problema persistir, acesse novamente o sistema através de dispositivos com resolução igual ou superior a 296 x 592px.</div>
         
 	</body>
 	
