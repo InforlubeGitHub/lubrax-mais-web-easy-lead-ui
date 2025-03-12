@@ -20,6 +20,7 @@ app.launcher = function() {
     // Inclui os eventos dos botões
     document.getElementById("Insert").addEventListener("click", function() { app.send(); });
     document.getElementById("Search").addEventListener("click", function() { app.search(); });
+    // Inclui os eventos dos componentes
     document.getElementById("ISearch").addEventListener("keydown", function(e) {
         switch(e.keyCode) {
             case 9:     // Evento da tecla "Tab"
@@ -41,6 +42,12 @@ app.launcher = function() {
             default:    // Evento de outras teclas
               break;
         }
+    });
+    document.getElementById("Name").addEventListener("input", function () {
+        this.value = this.value.replace(/[^a-zA-Z\s]/g, '');
+    });
+    document.getElementById("Email").addEventListener("input", function () {
+        this.value = this.value.replace(/[^a-zA-Z0-9@._-]/g, '');
     });
     // Inicializa os componentes de primeiro plano
     loader.build();
@@ -123,27 +130,22 @@ app.send = async function() {
             snackbar.show("Informe seu número de telefone");
             return;
         } else {
-            if (email.length == 0) {
-                snackbar.show("Informe seu endereço de e-mail");
-                return;
-            } else {
-                let lead = {
-                    name: name,
-                    phone: phone,
-                    email: email,
-                    registration: {
-                        label: "CPF",
-                        value: document.getElementById("CPF").value
-                    },
-                    privacy: {
-                        advice: checkbox.checked("PrivacyAdvice"),
-                        sms: checkbox.checked("PrivacySMS"),
-                        whatsapp: checkbox.checked("PrivacyWhatsapp"),
-                        email: checkbox.checked("PrivacyEmail")
-                    }
-                };
-                await controller.lead(lead);
+            let lead = {
+                name: name,
+                phone: phone,
+                email: email,
+                registration: {
+                    label: "CPF",
+                    value: document.getElementById("CPF").value
+                },
+                privacy: {
+                    advice: checkbox.checked("PrivacyAdvice"),
+                    sms: checkbox.checked("PrivacySMS"),
+                    whatsapp: checkbox.checked("PrivacyWhatsapp"),
+                    email: checkbox.checked("PrivacyEmail")
+                }
             };
+            await controller.lead(lead);
         };
     };
 };
@@ -221,6 +223,8 @@ controller.lead = async function(lead) {
             document.getElementById("Find").classList.add("hidden");
             document.getElementById("Lead").classList.add("hidden");
             document.getElementById("Done").classList.remove("hidden");
+            document.getElementById("Message").classList.remove("hidden");
+            document.getElementById("Insert").classList.add("hidden");
             return;
         } else {
             app.error();

@@ -66,6 +66,12 @@
     .toolbar h1 { font-weight: bold; }
     .toolbar h2 { font-style: normal; }
 
+    small.failure {
+        display: none;
+        color: var(--danger);
+        font-size: var(--fs-xs);
+    }
+
 .content {
     width: 100%;
     height: calc(100% - 64px);
