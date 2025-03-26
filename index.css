@@ -66,7 +66,7 @@
     .toolbar h1 { font-weight: bold; }
     .toolbar h2 { font-style: normal; }
 
-    small.failure {
+    small.invalid {
         display: none;
         color: var(--danger);
         font-size: var(--fs-xs);
@@ -135,6 +135,8 @@
         font-size: var(--fs-ul);
     }
     .done h2 { font-size: var(--fs-lg); }
+
+label i { font-size: var(--fs-xs); }
 
 .failure {
     width: 100%;

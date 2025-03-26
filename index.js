@@ -49,6 +49,14 @@ app.launcher = function() {
     document.getElementById("Email").addEventListener("input", function () {
         this.value = this.value.replace(/[^a-zA-Z0-9@._-]/g, '');
     });
+    document.getElementById("Email").addEventListener("blur", function () {
+        if (app.validate.email(this.value) == false) {
+            document.getElementById("EmailInvalid").style.display = "inline-block";
+        };
+    });
+    document.getElementById("Email").addEventListener("focus", function () {
+        document.getElementById("EmailInvalid").style.display = "none";
+    });
     // Inicializa os componentes de primeiro plano
     loader.build();
     // Obtem as credenciais do usuário
@@ -148,6 +156,14 @@ app.send = async function() {
             await controller.lead(lead);
         };
     };
+};
+
+// Rotinas de validação
+app.validate = {
+    email: function(email) {
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return regex.test(email);
+    }
 };
 
 // Objeto de recursos de comunicação
